@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+
+# YOLO run artifacts
+runs/
+src/runs/
+
+# Generated outputs
+outputs/*
+!outputs/.gitkeep
+
+# Large model weights (fetch/train separately; see README)
+models/*.pt
+!models/.gitkeep
+data/raw/
+data/plates/
+data/test/*.mp4
+data/test/*.avi
+data/test/*.mov
