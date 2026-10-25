@@ -158,18 +158,3 @@ a leading province code (`WP`, `CP`, `SP`, `NP`, `EP`, `NW`, `NC`, `UP`, `SG`)
 is removed, the code is stripped (`WPKM5141` -> `KM5141`) and returned in the
 validator's `province` field. Plates that already fit the pattern are left
 alone.
-
-## Known limitations
-
-- Detection was fine-tuned on about 250 images; it has only been spot-checked
-  on a single sample photo. Run a batch on varied Sri Lankan plates (angles,
-  lighting, motorcycles) before trusting the accuracy.
-- The validator checks plate *shape*, not whether a given letter-series code
-  has actually been issued.
-- Video mode has only been tested on a synthetic clip built from one photo,
-  not real toll-gate footage or a live camera.
-- Old-style plates carry a small province code (e.g. `WP`) beside the main
-  registration. Full codes are stripped by the validator, but if OCR reads only
-  one stray letter of it (e.g. `WKM5141`) that is indistinguishable from a
-  3-letter series and is kept. Video mode's cross-frame voting mostly filters
-  this out; single images may not.
